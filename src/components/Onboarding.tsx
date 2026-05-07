@@ -80,7 +80,7 @@ export default function Onboarding({onComplete}: OnboardingProps) {
       {/* Header */}
       <header className="p-6 md:p-10 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <img src="/logo.jpeg" alt="SubSense Logo" className="w-10 h-10 object-contain" />
+          <img src="/src/assets/images/logo.jpeg" alt="SubSense Logo" className="w-10 h-10 object-contain" />
           <span className="text-2xl font-black tracking-tight">SubSense</span>
         </div>
         {currentLogicalStep > 0 && currentLogicalStep < 10 && (
@@ -228,7 +228,7 @@ function Welcome({next}: any) {
         <div className="absolute inset-0 flex items-center justify-center p-12">
             <div className="relative w-full h-full flex items-center justify-center">
               <img 
-                src="/1st image.png" 
+                src="/src/assets/images/1st image.png" 
                 alt="Welcome Illustration" 
                 className="max-h-full object-contain relative z-10" 
               />
@@ -365,7 +365,7 @@ function AccountDetails({info, setInfo, next}: any) {
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            src="/2nd image.png" 
+            src="/src/assets/images/2nd image.png" 
             alt="Account Illustration" 
             className="max-h-full object-contain" 
          />
@@ -441,7 +441,7 @@ function CompanyDetails({info, setInfo, next}: any) {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            src="/3rd image.png" 
+            src="/src/assets/images/3rd image.png" 
             alt="Company Illustration" 
             className="max-h-full object-contain rounded-3xl" 
          />
@@ -545,7 +545,7 @@ function ToolDiscovery({next, skip}: any) {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            src="/4th image.png" 
+            src="/src/assets/images/4th image.png" 
             alt="Tools Illustration" 
             className="max-h-full object-contain rounded-3xl" 
          />
