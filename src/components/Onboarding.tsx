@@ -26,6 +26,13 @@ import {motion, AnimatePresence} from 'motion/react';
 import {cn} from '../lib/utils';
 import {COMPANY} from '../constants';
 
+// --- ASSET IMPORTS ---
+import logoImg from '../assets/images/logo.jpeg';
+import image1 from '../assets/images/1st image.png';
+import image2 from '../assets/images/2nd image.png';
+import image3 from '../assets/images/3rd image.png';
+import image4 from '../assets/images/4th image.png';
+
 const STEPS_LABELS = ['About Yourself', 'Company Details', 'Tools', 'Priority', 'Payment', 'Finish'];
 
 const INDUSTRIES = [
@@ -61,15 +68,14 @@ export default function Onboarding({onComplete}: OnboardingProps) {
   const [dashboardFocus, setDashboardFocus] = useState<string[]>(['Contract Management', 'Cost Optimization']);
   const [plan, setPlan] = useState<'Base' | 'Standard' | 'Pro'>('Pro');
 
-  // Mapping logical steps to progress bar steps (1-6)
   const progressStep = useMemo(() => {
-    if (currentLogicalStep <= 0) return 0; // Welcome screen
-    if (currentLogicalStep <= 2) return 1; // Work Setup, Personal Info
-    if (currentLogicalStep === 3) return 2; // Company Details
-    if (currentLogicalStep <= 6) return 3; // Tools Discovery, Selection, Permissions
-    if (currentLogicalStep <= 8) return 4; // Priorities, Dash Focus
-    if (currentLogicalStep === 9) return 5; // Payment
-    return 6; // Finish
+    if (currentLogicalStep <= 0) return 0;
+    if (currentLogicalStep <= 2) return 1;
+    if (currentLogicalStep === 3) return 2;
+    if (currentLogicalStep <= 6) return 3;
+    if (currentLogicalStep <= 8) return 4;
+    if (currentLogicalStep === 9) return 5;
+    return 6;
   }, [currentLogicalStep]);
 
   const nextStep = () => setCurrentLogicalStep(prev => prev + 1);
@@ -80,7 +86,7 @@ export default function Onboarding({onComplete}: OnboardingProps) {
       {/* Header */}
       <header className="p-6 md:p-10 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <img src="/src/assets/images/logo.jpeg" alt="SubSense Logo" className="w-10 h-10 object-contain" />
+          <img src={logoImg} alt="SubSense Logo" className="w-10 h-10 object-contain" />
           <span className="text-2xl font-black tracking-tight">SubSense</span>
         </div>
         {currentLogicalStep > 0 && currentLogicalStep < 10 && (
@@ -228,7 +234,7 @@ function Welcome({next}: any) {
         <div className="absolute inset-0 flex items-center justify-center p-12">
             <div className="relative w-full h-full flex items-center justify-center">
               <img 
-                src="/src/assets/images/1st image.png" 
+                src={image1} 
                 alt="Welcome Illustration" 
                 className="max-h-full object-contain relative z-10" 
               />
@@ -365,7 +371,7 @@ function AccountDetails({info, setInfo, next}: any) {
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            src="/src/assets/images/2nd image.png" 
+            src={image2} 
             alt="Account Illustration" 
             className="max-h-full object-contain" 
          />
@@ -441,7 +447,7 @@ function CompanyDetails({info, setInfo, next}: any) {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            src="/src/assets/images/3rd image.png" 
+            src={image3} 
             alt="Company Illustration" 
             className="max-h-full object-contain rounded-3xl" 
          />
@@ -545,7 +551,7 @@ function ToolDiscovery({next, skip}: any) {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            src="/src/assets/images/4th image.png" 
+            src={image4} 
             alt="Tools Illustration" 
             className="max-h-full object-contain rounded-3xl" 
          />
