@@ -80,7 +80,7 @@ export default function Onboarding({onComplete}: OnboardingProps) {
       {/* Header */}
       <header className="p-6 md:p-10 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <img src="/src/assets/images/regenerated_image_1778164173384.jpg" alt="SubSense Logo" className="w-10 h-10 object-contain" referrerPolicy="no-referrer" />
+          <img src="/logo.jpeg" alt="SubSense Logo" className="w-10 h-10 object-contain" />
           <span className="text-2xl font-black tracking-tight">SubSense</span>
         </div>
         {currentLogicalStep > 0 && currentLogicalStep < 10 && (
@@ -225,14 +225,12 @@ function Welcome({next}: any) {
         </button>
       </div>
       <div className="flex-1 relative w-full aspect-square md:aspect-auto md:h-[600px] bg-lavender rounded-[60px] overflow-hidden flex items-end justify-center">
-        {/* Illustration with Hello removal */}
         <div className="absolute inset-0 flex items-center justify-center p-12">
             <div className="relative w-full h-full flex items-center justify-center">
               <img 
-                src="/src/assets/images/input_file_14.png" 
+                src="/1st image.png" 
                 alt="Welcome Illustration" 
                 className="max-h-full object-contain relative z-10" 
-                referrerPolicy="no-referrer"
               />
             </div>
         </div>
@@ -367,11 +365,9 @@ function AccountDetails({info, setInfo, next}: any) {
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            src="/src/assets/images/input_file_15.png" 
+            src="/2nd image.png" 
             alt="Account Illustration" 
             className="max-h-full object-contain" 
-            referrerPolicy="no-referrer" 
-            onError={(e) => (e.currentTarget.src = 'https://undraw.co/api/illustrations/svg/login')} 
          />
       </div>
     </div>
@@ -445,11 +441,9 @@ function CompanyDetails({info, setInfo, next}: any) {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            src="/src/assets/images/input_file_14.png" 
+            src="/3rd image.png" 
             alt="Company Illustration" 
             className="max-h-full object-contain rounded-3xl" 
-            referrerPolicy="no-referrer" 
-            onError={(e) => (e.currentTarget.src = 'https://undraw.co/api/illustrations/svg/building')} 
          />
       </div>
 
@@ -524,7 +518,7 @@ function ToolDiscovery({next, skip}: any) {
         <div className="space-y-4 max-w-md">
           <button onClick={next} className="w-full flex items-center gap-6 p-8 bg-white rounded-3xl group hover:shadow-xl hover:shadow-primary/5 transition-all text-left">
             <div className="w-16 h-16 bg-lavender rounded-2xl flex items-center justify-center shrink-0">
-               <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" className="w-8 h-8" referrerPolicy="no-referrer" />
+               <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" className="w-8 h-8" />
             </div>
             <div>
               <h4 className="text-xl font-black mb-1">Fetch from Google Workspace</h4>
@@ -551,11 +545,9 @@ function ToolDiscovery({next, skip}: any) {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            src="/src/assets/images/input_file_16.png" 
+            src="/4th image.png" 
             alt="Tools Illustration" 
             className="max-h-full object-contain rounded-3xl" 
-            referrerPolicy="no-referrer" 
-            onError={(e) => (e.currentTarget.src = 'https://undraw.co/api/illustrations/svg/software_engineer')} 
          />
       </div>
     </div>
@@ -866,7 +858,7 @@ function Plans({selected, setSelected, next}: any) {
               onClick={() => { setSelected(p.name as any); next(); }}
               className={cn(
                 "w-full py-5 rounded-2xl font-black text-xl transition-all",
-                p.popular ? "bg-xl-btn-primary hover:bg-cta hover:text-primary" : "bg-lavender text-primary hover:bg-primary hover:text-white"
+                p.popular ? "bg-white text-primary hover:bg-cta hover:text-primary" : "bg-lavender text-primary hover:bg-primary hover:text-white"
               )}
             >
               Select {p.name}
@@ -885,7 +877,7 @@ function Finish({onComplete, name}: any) {
         <div className="absolute inset-0 bg-cta/20 rounded-full animate-pulse" />
         <div className="absolute inset-4 bg-cta/40 rounded-full" />
         <div className="absolute inset-0 flex items-center justify-center">
-             <img src="input_file_12.png" alt="All Set" className="max-h-[80%] object-contain" referrerPolicy="no-referrer" onError={(e) => (e.currentTarget.src = 'https://undraw.co/api/illustrations/svg/celebration')} />
+             <div className="text-5xl">🎉</div>
         </div>
       </div>
 
